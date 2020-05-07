@@ -2,10 +2,10 @@ import React from 'react'
 import { Col, Typography, Skeleton } from 'antd'
 // import { Link } from "gatsby"
 
-import Layout from '../layout/layout'
+import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
-import Row from '../layout/row'
-import Carousel from '../layout/carousel'
+import Row from '../components/layout/row'
+import Carousel from '../components/carousel'
 
 const { Title, Paragraph } = Typography
 
@@ -15,7 +15,10 @@ const IndexPage = () => (
 
     <section id='first-screen'>
       <Carousel>
-        <div className='container'>
+        <div
+          className='container'
+          style={{ minHeight: '480px', justifyContent: 'center' }}
+        >
           <div className='main-info'>
             <span className='date'>April 19-23, 2021</span>
             <br />

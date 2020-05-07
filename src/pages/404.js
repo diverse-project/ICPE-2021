@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Result } from 'antd'
 import { navigate } from 'gatsby'
 
-import Layout from '../archive/layout'
+import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
 const NotFoundPage = () => (

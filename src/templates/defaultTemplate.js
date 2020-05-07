@@ -2,7 +2,7 @@ import React from 'react'
 import { PageHeader, Typography } from 'antd'
 import { graphql } from 'gatsby'
 
-import Layout from '../layout/layout'
+import Layout from '../components/layout/layout'
 
 export default function Template ({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data

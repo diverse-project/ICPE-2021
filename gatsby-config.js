@@ -4,6 +4,7 @@ module.exports = {
     description: `The International Conference on Performance Engineering (ICPE) originated eleven years ago from the fusion of an ACM workshop on software and performance prediction and a SPEC workshop focused on benchmarking and performance evaluation. For 2021, it will be held in France, in Rennes from April 19th to April 23rd.`,
     author: `@diverse-team`
   },
+  pathPrefix: '/ICPE-2021', // for GitHub Pages, see: https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/
   plugins: [
     {
       resolve: `gatsby-plugin-less`,
@@ -12,6 +13,13 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `backgrounds`,
+        path: `${__dirname}/src/images/carousel`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,13 +40,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `ICPE 2021`,
+        short_name: `ICPE 2021`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        background_color: `#b52c49`,
+        theme_color: `#b52c49`,
+        display: `minimal-ui`
+        // icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
