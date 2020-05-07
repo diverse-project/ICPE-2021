@@ -15,9 +15,9 @@ const IndexPage = () => (
 
     <section id='first-screen'>
       <Carousel>
-        <div class='container'>
+        <div className='container'>
           <div className='main-info'>
-            <span class='date'>April 19-23, 2021</span>
+            <span className='date'>April 19-23, 2021</span>
             <br />
             <h1>
               12th ACM / SPEC International Conference on Computational
@@ -32,7 +32,7 @@ const IndexPage = () => (
       </Carousel>
     </section>
 
-    <section class='container-md'>
+    <section className='container-md'>
       <Row>
         <Col span={16}>
           <Title level={2}>Welcome!</Title>

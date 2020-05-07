@@ -1,12 +1,28 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
+import { StaticQuery, graphql } from 'gatsby'
 
-import './header.css'
+import './header.less'
 
 const { Header } = Layout
 
-const AppHeader = () => {
-  const categories = ['home', 'organization', 'calls', 'program', 'participate']
+const AppHeader = ({ data }) => {
+  const items = data.allMarkdownRemark.edges
+    .map(edge => edge.node.frontmatter)
+    .reduce((acc, item) => {
+      const content = acc[item.category]
+      const newMenuEntry = { label: item.title, path: item.path }
+
+      if (content === undefined) {
+        acc[item.category] = newMenuEntry
+      } else if (content instanceof Array) {
+        acc[item.category] = content.concat(newMenuEntry)
+      } else {
+        acc[item.category] = [content, newMenuEntry]
+      }
+
+      return acc
+    }, {})
 
   return (
     <Header
@@ -19,12 +35,10 @@ const AppHeader = () => {
       }}
     >
       <div className='header-container'>
-        <div class='brand'>ICPE 2021</div>
+        <div className='brand'>ICPE 2021</div>
         <Menu mode='horizontal' className='header-menu'>
-          {categories.map(category => (
-            <Menu.Item key={category} className='header-menu-item'>
-              <a href={`/${category}`}>{category.toLocaleUpperCase()}</a>
-            </Menu.Item>
+          {Object.entries(items).map(([category, item]) => (
+            <MenuItem key={category} category={category} item={item} />
           ))}
         </Menu>
       </div>
@@ -32,4 +46,49 @@ const AppHeader = () => {
   )
 }
 
-export default AppHeader
+const MenuItem = props => {
+  const { category, item } = props
+
+  if (item instanceof Array) {
+    return (
+      <Menu.SubMenu
+        className='header-menu-item'
+        title={category.toLocaleUpperCase()}
+        {...props}
+      >
+        {item.map(link => (
+          <Menu.Item key={link.label} className='header-menu-item'>
+            <a href={link.path}>{link.label}</a>
+          </Menu.Item>
+        ))}
+      </Menu.SubMenu>
+    )
+  } else {
+    return (
+      <Menu.Item className='header-menu-item' {...props}>
+        <a href={item.path}>{category.toLocaleUpperCase()}</a>
+      </Menu.Item>
+    )
+  }
+}
+
+const query = graphql`
+  query MyQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          fileAbsolutePath
+          frontmatter {
+            title
+            path
+            category
+          }
+        }
+      }
+    }
+  }
+`
+
+export default () => (
+  <StaticQuery query={query} render={data => <AppHeader data={data} />} />
+)
