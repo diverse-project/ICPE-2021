@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button, Result } from 'antd'
+import { navigate } from 'gatsby'
 
 import Layout from '../archive/layout'
 import SEO from '../components/seo'
@@ -6,8 +8,16 @@ import SEO from '../components/seo'
 const NotFoundPage = () => (
   <Layout>
     <SEO title='404: Not found' />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Result
+      status='404'
+      title='404'
+      subTitle='Sorry, the page you visited does not exist.'
+      extra={
+        <Button type='primary' onClick={() => navigate('/')}>
+          Back Home
+        </Button>
+      }
+    />
   </Layout>
 )
 
