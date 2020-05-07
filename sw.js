@@ -27,20 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-f5053a5c89f47cbdd8a7.js"
+    "url": "webpack-runtime-5cebf8a476eb2a7a7a4f.js"
   },
   {
-    "url": "framework-3c607a9ab5a1c641bbca.js"
+    "url": "framework-972833c791692296cdd7.js"
   },
   {
-    "url": "app-c3d971b8a410ddcbedca.js"
+    "url": "app-d41822a251af1a8d3513.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "7a77393b436a4eec6a9d1b6dacbd6af8"
+    "revision": "c1962816e37b0a0f1fc7c48877a20a9d"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-1cf1815cd9e7d53dcb02.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-3dab3f8a67c1189caac1.js"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -48,11 +48,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "554bcac576b36263321459ef93435ccc"
+    "revision": "b92bc54e5b92afaed4f22da8d3cc1db4"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "08d5e1fda64e734561bcc4be69912201"
+    "revision": "87cb02f53ceb13be4446fdc21868f8c3"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -140,12 +140,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/ICPE-2021/ICPE-2021`), ``)
+  pathname = pathname.replace(new RegExp(`^/ICPE-2021`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/ICPE-2021/ICPE-2021/app-c3d971b8a410ddcbedca.js`))) {
+  if (!resources || !(await caches.match(`/ICPE-2021/app-d41822a251af1a8d3513.js`))) {
     return await fetch(event.request)
   }
 
@@ -158,7 +158,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/ICPE-2021/ICPE-2021/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/ICPE-2021/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
