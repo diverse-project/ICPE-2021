@@ -35,7 +35,9 @@ const AppHeader = ({ data }) => {
       }}
     >
       <div className='header-container'>
-        <div className='brand'>ICPE 2021</div>
+        <div className='brand'>
+          <a href='/'>ICPE 2021</a>
+        </div>
         <Menu mode='horizontal' className='header-menu'>
           {Object.entries(items).map(([category, item]) => (
             <MenuItem key={category} category={category} item={item} />
