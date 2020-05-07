@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography } from 'antd'
+import { PageHeader, Typography } from 'antd'
 import { graphql } from 'gatsby'
 
 import Layout from '../layout/layout'
@@ -11,6 +11,12 @@ export default function Template ({ data }) {
   return (
     <Layout>
       <div className='container-md'>
+        <PageHeader
+          className='site-page-header'
+          onBack={() => window.history.back()}
+          title='Previous'
+        />
+
         <Typography.Title level={1}>{frontmatter.title}</Typography.Title>
         <div
           className='blog-post-content'
@@ -26,9 +32,9 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         path
         title
+        category
       }
     }
   }
