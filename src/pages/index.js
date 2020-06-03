@@ -1,11 +1,10 @@
 import React from 'react'
 import { Col, Typography, Skeleton } from 'antd'
-// import { Link } from "gatsby"
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import Row from '../components/layout/row'
-import Carousel from '../components/carousel'
+import Banner from '../components/banner'
 
 const { Title, Paragraph } = Typography
 
@@ -14,25 +13,7 @@ const IndexPage = () => (
     <SEO title='Home' />
 
     <section id='first-screen'>
-      <Carousel>
-        <div
-          className='container'
-          style={{ minHeight: '480px', justifyContent: 'center' }}
-        >
-          <div className='main-info'>
-            <span className='date'>April 19-23, 2021</span>
-            <br />
-            <h1>
-              12th ACM / SPEC International Conference on Computational
-              Performance
-            </h1>
-            <br />
-            <p>
-              <b>Rennes, France</b>
-            </p>
-          </div>
-        </div>
-      </Carousel>
+      <Banner />
     </section>
 
     <section className='container-md'>
