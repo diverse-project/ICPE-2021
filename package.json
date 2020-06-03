@@ -28,16 +28,12 @@
     "gh-pages": "^2.2.0",
     "prettier": "2.0.5"
   },
-  "keywords": [
-    "icpe",
-    "computer-science-conference",
-    "conference-website"
-  ],
+  "keywords": ["icpe", "computer-science-conference", "conference-website"],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gh-pages -d public",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

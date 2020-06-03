@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
-import { StaticQuery, graphql } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 import './header.less'
 
@@ -36,7 +36,7 @@ const AppHeader = ({ data }) => {
     >
       <div className='header-container'>
         <div className='brand'>
-          <a href='/'>ICPE 2021</a>
+          <Link to='/'>ICPE 2021</Link>
         </div>
         <Menu mode='horizontal' className='header-menu'>
           {Object.entries(items).map(([category, item]) => (
@@ -60,7 +60,7 @@ const MenuItem = props => {
       >
         {item.map(link => (
           <Menu.Item key={link.label} className='header-menu-item'>
-            <a href={link.path}>{link.label}</a>
+            <Link to={link.path}>{link.label}</Link>
           </Menu.Item>
         ))}
       </Menu.SubMenu>
@@ -68,7 +68,7 @@ const MenuItem = props => {
   } else {
     return (
       <Menu.Item className='header-menu-item' {...props}>
-        <a href={item.path}>{category.toLocaleUpperCase()}</a>
+        <Link to={item.path}>{category.toLocaleUpperCase()}</Link>
       </Menu.Item>
     )
   }
