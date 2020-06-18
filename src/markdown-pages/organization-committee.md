@@ -6,15 +6,25 @@ category: Organization
 
 ## General chairs
 
-Zhen Ming (Jack) Jiang
-Johann Bourcier, Univ. Rennes, France
+Zhen Ming (Jack) Jiang, York University, Canada
+Johann Bourcier, University of Rennes 1, France
 
 ## Program chairs
 
-Cor-Paul Bezemer
-Vittorio Cortellessa
+Vittorio Cortellessa, University of L'Aquila, Italy
+Cor-Paul Bezemer, University of Alberta, Canada
+
 
 ## Industry track chairs
 
-[Lydia Chen](https://researcher.watson.ibm.com/researcher/view.php?person=zurich-yic), IBM Research, Switzerland
-James Buceck
+Lydia Chen, TU Delft, Netherlands
+James Buceck, Hewlett Packard Enterprise, USA
+
+## Local Arrangements chairs
+
+Elisabeth Lebret,	Inria, France
+Nathalie Lacaux, Inria, France
+
+## Web Chair
+
+Antoine Cheron,	Fabernovel, France
