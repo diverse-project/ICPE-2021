@@ -27,7 +27,6 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`
       }
     },
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -40,7 +39,7 @@ module.exports = {
         theme_color: `#b52c49`,
         display: `minimal-ui`
         // icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
-      },
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -49,17 +48,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/images`,
-      },
+              maxWidth: 1680
+            }
+          }
+        ]
+      }
     },
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`

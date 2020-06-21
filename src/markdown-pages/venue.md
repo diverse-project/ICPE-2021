@@ -21,17 +21,16 @@ Rennes is also a major center for industrial R&D with several major companies ha
 fraction of their R&D located here: Orange, Alcatel-Lucent, Technicolor, Thales, Canon, Thomson etc.
 Hundreds of high-tech SMEs, start-up incubators, etc, complement this ecosystem.
 
-![Rennes](./Rennes1.png "Rennes")
+![Rennes](../images/Rennes1.png 'Rennes')
 
 ## INRIA Conference center
 
 ### Location :
+
 The Beaulieu university campus. This is the main scientific campus in Rennes, which
 is located just outside of the city center. It is very easily reachable by bus (10-15 minutes ride from the
 city center), and it provides excellent infrastructure for both the workshops and the main conference
 at only symbolic cost (or even possibly entirely free).
-
-
 
 The conference will be organized at INRIA's conference center. The center
 frequently hosts international conferences (among many others: TTL 2015, OPODIS 2015, DASIP 2016,
