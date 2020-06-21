@@ -1,3 +1,9 @@
+---
+title: Important dates
+path: /importantDates
+category: Dates
+---
+
 ## Important dates:
 
 Conference: April 19-23, 2021

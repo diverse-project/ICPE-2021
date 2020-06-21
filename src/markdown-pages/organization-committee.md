@@ -17,7 +17,7 @@ Cor-Paul Bezemer, University of Alberta, Canada
 
 ## Industry track chairs
 
-Lydia Chen, TU Delft, Netherlands
+Robert Birke, ABB Future Labs, Switzerland
 James Buceck, Hewlett Packard Enterprise, USA
 
 ## Local Arrangements chairs
