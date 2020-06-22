@@ -21,7 +21,9 @@ Rennes is also a major center for industrial R&D with several major companies ha
 fraction of their R&D located here: Orange, Alcatel-Lucent, Technicolor, Thales, Canon, Thomson etc.
 Hundreds of high-tech SMEs, start-up incubators, etc, complement this ecosystem.
 
-![Rennes](../images/Rennes1.png 'Rennes')
+![Rennes1](../images/Rennes1.png)
+
+![Rennes2](../images/Rennes2.png)
 
 ## INRIA Conference center
 
@@ -32,11 +34,27 @@ is located just outside of the city center. It is very easily reachable by bus (
 city center), and it provides excellent infrastructure for both the workshops and the main conference
 at only symbolic cost (or even possibly entirely free).
 
+![BeaulieuLocation](../images/InriaRennesLocation.png)
+
+### Conference center
+
 The conference will be organized at INRIA's conference center. The center
 frequently hosts international conferences (among many others: TTL 2015, OPODIS 2015, DASIP 2016,
-ICFCA 2017, etc.). The facilities include an auditorium (capacity: 240 seats) with state-of-the-art audio-visual equipment: projector, sound system, possibilities for videoconferences and/or for filming the
-presentations, etc. The conference center also includes a reception space suitable for coffee breaks as
+ICFCA 2017, Middleware 2018.). The facilities include an auditorium (capacity: 240 seats) with state-of-the-art audio-visual equipment: projector, sound system, possibilities for videoconferences and/or for filming the
+presentations, etc. The conference center also includes a reception space for coffee breaks as
 well as three smaller rooms (capacity: 50 persons each) which may be used separately or joined
 together for lunches, poster sessions, etc. A high-quality Wi-Fi network covers the full center: European
 academics will have access to their familiar eduroam network, and individual credentials will be given
 to other attendees.
+
+![InriaRennes](../images/INRIARennes.png)
+
+![InriaAmphitheater](../images/InriaAmphiteater.png)
+
+## Gala diner
+
+The Gala diner should take place at "[Couvent des Jacobins](https://www.centre-congres-rennes.fr/en/)". Located in the heart of the historic center of Rennes, close to more than 4,000 hotel rooms, the Couvent des Jacobins has all the assets of a convention center of the 21st century, in a historic setting of the fourteenth century.
+
+![GalaDiner1](../images/GalaDinerPlace1.png)
+
+![GalaDiner2](../images/GalaDinerPlace2.png)
