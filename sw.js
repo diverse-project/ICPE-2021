@@ -27,32 +27,24 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-592232877c45de0c9774.js"
+    "url": "webpack-runtime-db6ecf6f8f5bf1004849.js"
   },
   {
-    "url": "framework-972833c791692296cdd7.js"
+    "url": "framework-93d3a746c3cf42acdafc.js"
   },
   {
-    "url": "app-d41822a251af1a8d3513.js"
+    "url": "app-6bd5d23986a137c29855.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "6950ef202fa236e28c33098555382867"
+    "revision": "9ddf5052cf9bc36620f29eb27193eaf6"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-3dab3f8a67c1189caac1.js"
-  },
-  {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "43232b01cc861c0701a3ece4bd67720b"
-  },
-  {
-    "url": "page-data/app-data.json",
-    "revision": "935424ccc9899b7838e87a78afea9b3a"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-e5cb9e0c77a823b86dc2.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "87cb02f53ceb13be4446fdc21868f8c3"
+    "revision": "4f6600b739e9c6b0cdcb3b1ad6bb6ca7"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -140,12 +132,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/ICPE-2021`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/ICPE-2021/app-d41822a251af1a8d3513.js`))) {
+  if (!resources || !(await caches.match(`/app-6bd5d23986a137c29855.js`))) {
     return await fetch(event.request)
   }
 
@@ -158,7 +150,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/ICPE-2021/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
