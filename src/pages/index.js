@@ -1,10 +1,11 @@
 import React from 'react'
-import { Col, Typography, Skeleton } from 'antd'
+import { Col, Typography } from 'antd'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import Row from '../components/layout/row'
 import Banner from '../components/banner'
+import TwitterTimeline from '../components/twitter-timeline'
 
 const { Title, Paragraph } = Typography
 
@@ -61,10 +62,7 @@ const IndexPage = () => (
 
         <Col span={6} offset={2}>
           <Title level={2}>Twitter feed</Title>
-
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
+          <TwitterTimeline />
         </Col>
       </Row>
     </section>
