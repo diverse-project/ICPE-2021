@@ -1,5 +1,6 @@
-import React from 'react'
-import { Layout, Menu } from 'antd'
+import React, { useState } from 'react'
+import { Button, Layout, Menu } from 'antd'
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
 import './header.less'
@@ -7,46 +8,64 @@ import './header.less'
 const { Header } = Layout
 
 const AppHeader = ({ data }) => {
-  const items = data.allMarkdownRemark.edges
-    .map(edge => edge.node.frontmatter)
-    .reduce((acc, item) => {
-      const content = acc[item.category]
-      const newMenuEntry = { label: item.title, path: item.path }
+  const items = getMenuItems(data)
 
-      if (content === undefined) {
-        acc[item.category] = newMenuEntry
-      } else if (content instanceof Array) {
-        acc[item.category] = content.concat(newMenuEntry)
-      } else {
-        acc[item.category] = [content, newMenuEntry]
-      }
-
-      return acc
-    }, {})
+  const [menuCollpased, setMenuCollapsed] = useState(true)
 
   return (
-    <Header
-      id='header'
-      style={{
-        paddingX: 0,
-        height: '80px',
-        backgroundColor: 'white',
-        borderTop: '4px solid #b52c49'
-      }}
-    >
-      <div className='header-container'>
-        <div className='brand'>
-          <Link to='/'>ICPE 2021</Link>
+    <>
+      <Header
+        id='header'
+        style={{
+          paddingX: 0,
+          backgroundColor: 'white',
+          borderTop: '4px solid #b52c49'
+        }}
+      >
+        <div className='header-container'>
+          <div className='brand'>
+            <Link to='/'>ICPE 2021</Link>
+          </div>
+
+          <div className='hide-on-desktop'>
+            <Button
+              type='primary'
+              onClick={() => setMenuCollapsed(!menuCollpased)}
+            >
+              {React.createElement(
+                menuCollpased ? MenuUnfoldOutlined : MenuFoldOutlined
+              )}
+            </Button>
+          </div>
+
+          <DesktopMenu items={items} />
         </div>
-        <Menu mode='horizontal' className='header-menu'>
-          {Object.entries(items).map(([category, item]) => (
-            <MenuItem key={category} category={category} item={item} />
-          ))}
-        </Menu>
-      </div>
-    </Header>
+
+        <MobileMenu items={items} collapsed={menuCollpased} />
+      </Header>
+    </>
   )
 }
+
+const MobileMenu = ({ items, collapsed }) => (
+  <div className={'hide-on-desktop' + (collapsed ? ' hidden' : '')}>
+    <Menu mode='inline' className='header-menu mobile-menu'>
+      {Object.entries(items).map(([category, item]) => (
+        <MenuItem key={category} category={category} item={item} />
+      ))}
+    </Menu>
+  </div>
+)
+
+const DesktopMenu = ({ items }) => (
+  <div className='hide-on-mobile'>
+    <Menu mode='horizontal' className='header-menu'>
+      {Object.entries(items).map(([category, item]) => (
+        <MenuItem key={category} category={category} item={item} />
+      ))}
+    </Menu>
+  </div>
+)
 
 const MenuItem = props => {
   const { category, item } = props
@@ -72,6 +91,25 @@ const MenuItem = props => {
       </Menu.Item>
     )
   }
+}
+
+function getMenuItems (data) {
+  return data.allMarkdownRemark.edges
+    .map(edge => edge.node.frontmatter)
+    .reduce((acc, item) => {
+      const content = acc[item.category]
+      const newMenuEntry = { label: item.title, path: item.path }
+
+      if (content === undefined) {
+        acc[item.category] = newMenuEntry
+      } else if (content instanceof Array) {
+        acc[item.category] = content.concat(newMenuEntry)
+      } else {
+        acc[item.category] = [content, newMenuEntry]
+      }
+
+      return acc
+    }, {})
 }
 
 const query = graphql`

@@ -19,7 +19,7 @@ const IndexPage = () => (
 
     <section className='container-md'>
       <Row>
-        <Col span={16}>
+        <Col xs={24} sm={16} md={16} lg={16} xl={16} xxl={16}>
           <Title level={2}>Welcome!</Title>
 
           <Paragraph>
@@ -60,7 +60,14 @@ const IndexPage = () => (
           </Paragraph>
         </Col>
 
-        <Col span={6} offset={2}>
+        <Col
+          xs={24}
+          sm={8}
+          md={8}
+          lg={{ span: 6, offset: 2 }}
+          xl={{ span: 6, offset: 2 }}
+          xxl={{ span: 6, offset: 2 }}
+        >
           <Title level={2}>Twitter feed</Title>
           <TwitterTimeline />
         </Col>

@@ -6,7 +6,7 @@ const { Footer } = Layout
 const AppFooter = () => (
   <Footer
     style={{
-      height: '80px',
+      minHeight: '80px',
       textAlign: 'center',
       paddingLeft: 0,
       paddingRight: 0
