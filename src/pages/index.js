@@ -60,14 +60,7 @@ const IndexPage = () => (
           </Paragraph>
         </Col>
 
-        <Col
-          xs={24}
-          sm={8}
-          md={8}
-          lg={{ span: 6, offset: 2 }}
-          xl={{ span: 6, offset: 2 }}
-          xxl={{ span: 6, offset: 2 }}
-        >
+        <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={8}>
           <Title level={2}>Twitter feed</Title>
           <TwitterTimeline />
         </Col>
